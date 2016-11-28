@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:04 -0400] "GET / HTTP/1.1" 200 1383 http-bio-8080-exec-1 253
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /css/style.css HTTP/1.1" 200 1865 http-bio-8080-exec-3 36
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /libs/bootstrap-3.3-2.4-dist/css/bootstrap.min.css HTTP/1.1" 200 117305 http-bio-8080-exec-4 37
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /js/jquery-1.11.1.min.js HTTP/1.1" 200 95786 http-bio-8080-exec-2 73
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /js/validator.js HTTP/1.1" 200 4174 http-bio-8080-exec-6 29
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /imgs/bg_login.jpg HTTP/1.1" 200 373535 http-bio-8080-exec-8 37
+0:0:0:0:0:0:0:1 - - [11/May/2016:18:27:05 -0400] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [11/May/2016:19:10:46 -0400] "POST /login_amicoz HTTP/1.1" 200 1 http-bio-8080-exec-1 950
+0:0:0:0:0:0:0:1 - - [11/May/2016:19:10:46 -0400] "GET /frontPage HTTP/1.1" 500 3673 http-bio-8080-exec-1 16

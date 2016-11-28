@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+  background-size: cover;
+  font-family: 'PT Sans', sans-serif;
+}
+select {
+   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat 99% #FFFFFF;
+   width: 90%;
+   padding: 5px;
+   font-size: 16px;
+   height: 30px;
+   border: 1px solid #ccc;
+   border-radius: 3;
+   -webkit-appearance: none;
+ }
+#header {
+  width: 100%;
+  height: 55px;
+  background: #EAB349;
+}
+
+#logo {
+  font-size: 34px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 55px;
+}
+
+.loginreg {
+  margin: auto;
+}
+
+#userInput{
+  height: 250px;
+  margin-top: 20px;
+}
+#userInput1,#userInput2,#userInput3,#userInput4,#userInput5,#userInput6,#userInput7,#userInput8,#userInput9,#userInput10{
+  margin: 10px;
+}
+#userInput1 input,#userInput2 input, #userInput3 input,#userInput4 input,#userInput5 input,#userInput6 input,#userInput7 input,#userInput8 input,#userInput9 input,#userInput10 input{
+width: 90%;
+border-radius: 3px;
+height: 30px;
+padding: 5px;
+}
+#userInput3 input,#userInput6 input,#userInput9 input{
+  background-color: #277BC1;
+  color: #FFFFFF;
+}
+#formbox{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.75);
+  margin: auto;
+  width: 100%;
+  min-height: 300px;
+  max-height: 420px;
+  max-width: 500px;
+  text-align:center;
+}
+
+html{
+background:url("../imgs/bg_login.jpg") no-repeat center center fixed;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4,
+ h5, h6, pre, code, form, fieldset, legend, input,
+  button, textarea, p, blockquote, th, td, a {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}

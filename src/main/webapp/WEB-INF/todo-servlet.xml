@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<context:component-scan base-package="com.in28minutes" />
+	<!-- <context:component-scan base-package="com.amicoz" /> -->
+	<context:component-scan base-package="org.amicoz" />
+	<mvc:default-servlet-handler />
+	<tx:annotation-driven transaction-manager="txManager" />
+	<mvc:annotation-driven />
+
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		<property name="maxUploadSize" value="50000000"/> </bean> -->
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="hibernate4AnnotatedSessionFactory" />
+		</property>
+	</bean>
+
+
+	<bean id="hibernate4AnnotatedSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+
+				<!-- <value>com.in28minutes.model.LoginInfo</value> -->
+				<value>com.amicoz.test.TestEntity</value>
+				<value>org.amicoz.model.UserInfo</value>
+				<value>org.amicoz.model.User</value>
+				<value>org.amicoz.model.SearchView</value>
+				<value>org.amicoz.model.Post</value>
+				<value>org.amicoz.model.FriendRequest</value>
+                <value>org.amicoz.model.Friends</value>
+                <value>org.amicoz.model.UserGroups</value>
+                <value>org.amicoz.model.Groups</value>
+                <value>org.amicoz.model.Likes</value>
+                <value>org.amicoz.model.Comments</value>
+				<!-- <value>org.amicoz.model.FriendRequest</value> -->
+				<!-- <value>org.amicoz.model.Friends</value> -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- </bean> -->
+
+	<bean id="testDAOObj" class="com.amicoz.test.TestDAO">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+	<bean id="UserDAOImplObj" class="org.amicoz.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+
+	<bean id="PostDAOImplObj" class="org.amicoz.dao.PostDaoImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+	
+	<bean id="groupDAOObj" class="org.amicoz.dao.GroupDaoImpl">
+		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+	</bean>
+	
+	<bean id="likesDAOObj" class="org.amicoz.dao.LikesDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+	
+	<bean id="commentDAOObj" class="org.amicoz.dao.CommentsDaoImpl">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+	</bean>
+	
+
+<!-- 	<bean id="FriendDAOImplObj" class="org.amicoz.dao.FriendDaoImpl"> -->
+<!--         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" /> -->
+<!-- 	</bean> -->
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/db_amicoz" />
+		<property name="username" value="root" />
+		<property name="password" value="infa@123" />
+		<!-- <property name="url" value="jdbc:mysql://beetle.czw0szmyfbrq.us-west-2.rds.amazonaws.com:3306/test_amicoz" 
+			/> -->
+		<!-- <property name="url" value="jdbc:mysql://localhost/db_amicoz" /> -->
+		<!-- <property name="username" value="scott" /> -->
+		<!-- <property name="password" value="IUBloomington" /> -->
+	</bean>
+	<!-- <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" 
+		/> -->
+	<!-- <bean id="multipartResolver" -->
+	<!-- class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> -->
+	<!-- <property name="maxUploadSize" value="100000" /> -->
+	<!-- </bean> -->
+
+
+</beans>

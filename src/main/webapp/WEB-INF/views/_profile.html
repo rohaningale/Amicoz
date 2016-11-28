@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Amicoz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+  <script src="js/dropdown.js"></script>
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/settingsform.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div id="header">
+    <a href="#"><div id="logo">Amicoz</div></a>
+    <div id="user">
+      <div id="img"></div>
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn" onclick="dropLink()">
+          <img src="imgs/profilepic.jpg" class="userpic" />
+          Munir Safi</a>
+        <div class="dropdown-content" id="profiledrop">
+          <a href="#profile">My Profile</a>
+          <a href="#settings">Settings</a>
+          <a href="#logout" class="logout">Logout</a>
+        </div>
+      </div>
+    </div>
+    <div id="search">
+      <input type="text" class="searchbox" placeholder="Search.."></input>
+    </div>
+  </div>
+  <div id="wrapper">
+		<div id="userbar">
+			<div id="profilepicture">
+				<img src="imgs/profilepic.jpg" />
+			</div>
+			<div id="userinformation">
+				<h1>${name}</h1>
+				<div class="birthday">10/06/1994</div>
+				<div class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a nulla id ipsum cursus ullamcorper nec at leo. Cras suscipit dictum tellus vel fermentum.</div>
+				<div class="friendbutton friend">Add Friend</div>
+			</div>
+		</div>
+		<div id="box" class="profileposts">
+			<div class="title" style="margin-bottom: 5px;">Timeline</div>
+			<ul class="timelineposts">
+				<li>
+					<div class="userinfo">
+						<img src="imgs/profilepic.jpg" class="profilepic" /> <span class="username"><a href="#profilelink">${name}</a></span><br/><span class="datetime">April 12, 2016</span><br/><span class="datetime">7:35PM</span>
+					</div>
+					<div class="post">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nunc libero, euismod eget nibh et, elementum efficitur libero. Fusce egestas imperdiet arcu, nec maximus turpis ornare at. Morbi porttitor nulla nisi, eu pretium elit ullamcorper pretium. <p>Aenean quis risus a turpis sagittis euismod sed quis mauris. Sed et faucibus quam. Sed eget risus turpis. Nullam sit amet neque gravida libero feugiat sagittis eu congue est. Donec a mauris rutrum, gravida ante non, egestas lacus. Nam lorem ex, pulvinar nec eros a, placerat ullamcorper diam.</p>
+					</div>
+					<div class="likebar">
+						<a href="#likes">10 likes <img src="imgs/like.png"/ class="like"></a>
+						<a href="#dislikes">2 dislikes <img src="imgs/dislike.png"/ class="like"></a>
+					</div>
+					<ul class="comments">
+						<li>
+							<img src="imgs/profilepic.jpg" class="friendcommentpic" />
+							<div class="usercomment">Etiam aliquam ligula pharetra ligula luctus, nec consectetur turpis ornare. Morbi at leo ornare, luctus odio eget, eleifend lorem. Mauris auctor vestibulum varius. Quisque commodo sollicitudin purus pulvinar interdum.</div>
+						</li>
+					</ul>
+					<img src="imgs/profilepic.jpg" class="mycommentpic" /><textarea class="commentbox" placeholder="Say something!"></textarea>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
